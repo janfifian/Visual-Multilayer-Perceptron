@@ -2,6 +2,9 @@ package Logic.ActivationFunctions;
 
 import static java.lang.Math.tanh;
 
+/**
+ * Represents hyperbolic tangent i.e. f(x)=(exp(2x)-1)/(exp(2x)+1).
+ */
 public class Tanh extends ActivationFunction {
     @Override
     public float calculate(float argument) {

@@ -1,5 +1,8 @@
 package Logic.ActivationFunctions;
 
+/**
+ * Represents the Rectified Linear Unit Function, i.e. f(x)=x for x>0 and 0 otherwise.
+ */
 public class ReLU extends ActivationFunction {
     @Override
     public float calculate(float argument) {

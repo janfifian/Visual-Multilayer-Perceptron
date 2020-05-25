@@ -30,12 +30,16 @@ public class PlotPrepper {
 
     private MultiLayerPerceptron multiLayerPerceptron;
     private Coord3d[] points = new Coord3d[4];
+    private Range Xrange = new Range(-2,2);
+    private Range Yrange = new Range(-2,2);
+
 
     public void setMultiLayerPerceptron(MultiLayerPerceptron multiLayerPerceptron){
         this.multiLayerPerceptron = multiLayerPerceptron;
     }
 
     public void setPoints(Dataset dataset){
+        points = new Coord3d[dataset.getTests().size()];
         int i = 0;
         for(ArrayList<Float> point : dataset.getTests()){
             points[i] = new Coord3d(point.get(0),point.get(1),point.get(2));
@@ -55,14 +59,14 @@ public class PlotPrepper {
         };
 
 // Define range and precision for the function to plot
-        Range range = new Range(-2, 2);
+
         int steps = 50;
         ColorMapper cm1 = new ColorMapper( new ColorMapGrayscale(), 0.0f, 1000.0f );
         ScatterMultiColor scatter = new ScatterMultiColor(points,new Color[] {new Color(0.0f,0.0f,0.0f),new Color(0.0f,0.0f,0.0f),new Color(0.0f,0.0f,0.0f),new Color(0.0f,0.0f,0.0f)},cm1,5.0f);
 
 
 // Create a surface drawing that function
-        Shape surface = Builder.buildOrthonormal(new OrthonormalGrid(range, steps), mapper);
+        Shape surface = Builder.buildOrthonormal(new OrthonormalGrid(Xrange, steps,Yrange,steps), mapper);
         ColorMapper cm;
         cm = new ColorMapper(new ColorMapRainbow(), surface.getBounds().getZmin(), surface.getBounds().getZmax(), new Color(1, 1, 1, .5f));
         surface.setColorMapper(cm);
@@ -147,5 +151,10 @@ public class PlotPrepper {
             System.out.println("Problem with screenshot: " + e.getMessage());
             System.exit(1);
         }
+    }
+
+    public void setRanges(float xBegin, float xEnd, float yBegin, float yEnd){
+        this.Xrange = new Range(xBegin,xEnd);
+        this.Yrange = new Range(yBegin,yEnd);
     }
 }

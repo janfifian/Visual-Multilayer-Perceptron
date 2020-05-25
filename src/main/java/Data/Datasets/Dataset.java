@@ -93,7 +93,7 @@ public class Dataset {
      * @param inputFile
      * @return
      */
-    public Dataset getDatasetFromFile(File inputFile){
+    public static Dataset getDatasetFromFile(File inputFile){
         Dataset dataset = new Dataset();
         BufferedReader br = null;
         try {
@@ -114,7 +114,7 @@ public class Dataset {
      * @param itemsToMap
      * @return
      */
-    private ArrayList<Float> mapToTestInstance(String[] itemsToMap){
+    private static ArrayList<Float> mapToTestInstance(String[] itemsToMap){
         ArrayList<Float> STI = new ArrayList<Float>();
         STI.add(Float.parseFloat(itemsToMap[0]));
         STI.add(Float.parseFloat(itemsToMap[1]));

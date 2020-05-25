@@ -5,8 +5,8 @@ import java.util.List;
 
 public class LogicOperators {
     /**
-     * Gets the dataset for AND
-     * @return
+     * Gets the Dataset for AND
+     * @return Dataset containing AND values
      */
     public static ArrayList<ArrayList<Float >> getAndDataset(){
         ArrayList<ArrayList<Float> > tests = new ArrayList<>();
@@ -19,7 +19,7 @@ public class LogicOperators {
 
     /**
      * Gets the dataset for OR
-     * @return
+     * @return Dataset containing OR values
      */
     public static ArrayList<ArrayList<Float >> getOrDataset(){
         ArrayList<ArrayList<Float> > tests = new ArrayList<>();
@@ -32,7 +32,7 @@ public class LogicOperators {
 
     /**
      * Gets the dataset for XOR
-     * @return
+     * @return Dataset containing XOR values
      */
     public static ArrayList<ArrayList<Float >> getXorDataset(){
         ArrayList<ArrayList<Float> > tests = new ArrayList<>();
@@ -45,7 +45,7 @@ public class LogicOperators {
 
     /**
      * Gets the dataset for IFF
-     * @return
+     * @return Dataset containing IFF values
      */
     public static ArrayList<ArrayList<Float >> getIffDataset(){
         ArrayList<ArrayList<Float> > tests = new ArrayList<>();
@@ -58,7 +58,7 @@ public class LogicOperators {
 
     /**
      * Gets the dataset for Implication
-     * @return
+     * @return Dataset containing Implication values
      */
     public static ArrayList<ArrayList<Float >> getImpliesDataset(){
         ArrayList<ArrayList<Float> > tests = new ArrayList<>();

@@ -1,5 +1,8 @@
 package Logic.ActivationFunctions;
 
+/**
+ * Represents classic sigmoid function, i.e. the mapping f(x)= 1/(1+exp(-x))
+ */
 public class Sigmoid extends ActivationFunction {
     @Override
     public float calculate(float argument) {

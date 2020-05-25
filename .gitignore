@@ -65,3 +65,4 @@ nb-configuration.xml
 # Maven
 log/
 target/
+out/artifacts/MyLittlePerceptron_jar2/Neural Networks.pptx
